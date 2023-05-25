@@ -6,11 +6,24 @@
 /*   By: ooussaad <ooussaad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 00:17:39 by ooussaad          #+#    #+#             */
-/*   Updated: 2023/05/25 14:21:37 by ooussaad         ###   ########.fr       */
+/*   Updated: 2023/05/25 16:17:31 by ooussaad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
+
+int meutix_initialize(t_root *data)
+{
+	int i;
+
+	i = 0;
+	while(i < data->philo_num)
+	{
+		if(pthread_mutex_init(&data->forks[i++],NULL))
+			return(1);
+	}
+	return (1);
+}
 
 int	fill_elm(t_root *data)
 {
@@ -18,6 +31,7 @@ int	fill_elm(t_root *data)
 	data->forks = malloc(sizeof(pthread_mutex_t) * data->philo_num);
 	if (data->forks == NULL)
 		return (0);
+	meutix_initialize(data);
 	return (1);
 }
 

@@ -6,12 +6,15 @@
 /*   By: ooussaad <ooussaad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 13:45:00 by ooussaad          #+#    #+#             */
-/*   Updated: 2023/05/25 14:21:22 by ooussaad         ###   ########.fr       */
+/*   Updated: 2023/05/25 16:16:17 by ooussaad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#ifndef PHILOSOPHERS_H
+# define PHILOSOPHERS_H
+# include <pthread.h>
 #include <stdio.h>
+#include<unistd.h>
 #include <stdlib.h>
 #include <limits.h>
 
@@ -45,3 +48,5 @@ long long	ft_atoi(char *str);
 int         check_numbers(char **argv);
 int			ft_init(t_root *data, char **argv, int argc);
 int			init_args(t_root *data, char **argv, int argc);
+
+#endif

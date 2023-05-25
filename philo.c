@@ -6,7 +6,7 @@
 /*   By: ooussaad <ooussaad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 13:45:02 by ooussaad          #+#    #+#             */
-/*   Updated: 2023/05/25 13:30:50 by ooussaad         ###   ########.fr       */
+/*   Updated: 2023/05/25 16:26:37 by ooussaad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ int main(int argc,char **argv)
 			printf("\e[0;32mcorrect input");
 		else
 			(write(2, "Error int \n",12), exit(0));
+		
 	}
 	else
 		(write(2, "Error args \n",11), exit(0));
