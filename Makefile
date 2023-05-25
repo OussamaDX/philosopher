@@ -1,6 +1,6 @@
 NAME = philo
 
-CFILES = philo.c check_number.c
+CFILES = philo.c check_number.c init_args.c
 
 OBJ = ${CFILES:.c=.o}
 
