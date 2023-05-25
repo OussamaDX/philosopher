@@ -6,7 +6,7 @@
 /*   By: ooussaad <ooussaad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 13:45:00 by ooussaad          #+#    #+#             */
-/*   Updated: 2023/05/25 13:32:01 by ooussaad         ###   ########.fr       */
+/*   Updated: 2023/05/25 14:21:22 by ooussaad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,30 @@
 #include <stdlib.h>
 #include <limits.h>
 
+	// int					ate_times;
+	// int					pos;
+	// char				*pos_str;
+	// int					ffork;
+	// int					sfork;
+typedef struct s_elm
+{
+	int			eat_num;
+	int			philo_position;
+	char		*philo_position_str;
+	int			front_fork;
+	int			side_front;
+}t_elm;
+
 typedef struct s_data
 {
 	int					philo_num;
 	int					time_to_die;
 	int					time_to_eat;
 	int					time_to_sleep;
-    int                 num_of_eat;
+    int					num_of_eat;
+	t_elm				*philospher;
+	pthread_mutex_t		*forks;
+
 }	t_root;
 
 long long	ft_atoi(char *str);
