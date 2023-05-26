@@ -6,7 +6,7 @@
 /*   By: ooussaad <ooussaad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 13:45:00 by ooussaad          #+#    #+#             */
-/*   Updated: 2023/05/25 16:16:17 by ooussaad         ###   ########.fr       */
+/*   Updated: 2023/05/26 21:04:09 by ooussaad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,12 @@
 #include <stdio.h>
 #include<unistd.h>
 #include <stdlib.h>
+#include <string.h>
+# include <sys/time.h>
 #include <limits.h>
 
-	// int					ate_times;
-	// int					pos;
-	// char				*pos_str;
-	// int					ffork;
-	// int					sfork;
+typedef struct s_data t_root;
+
 typedef struct s_elm
 {
 	int			eat_num;
@@ -30,6 +29,8 @@ typedef struct s_elm
 	char		*philo_position_str;
 	int			front_fork;
 	int			side_front;
+	pthread_t	philo_id;
+	t_root		*data;
 }t_elm;
 
 typedef struct s_data
@@ -41,12 +42,14 @@ typedef struct s_data
     int					num_of_eat;
 	t_elm				*philospher;
 	pthread_mutex_t		*forks;
-
+	unsigned long		start;
 }	t_root;
 
 long long	ft_atoi(char *str);
 int         check_numbers(char **argv);
 int			ft_init(t_root *data, char **argv, int argc);
 int			init_args(t_root *data, char **argv, int argc);
+int			ft_create_thread(t_root *data);
+char	*ft_itoa(int n);
 
 #endif

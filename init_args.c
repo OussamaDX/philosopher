@@ -6,7 +6,7 @@
 /*   By: ooussaad <ooussaad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 00:17:39 by ooussaad          #+#    #+#             */
-/*   Updated: 2023/05/25 16:17:31 by ooussaad         ###   ########.fr       */
+/*   Updated: 2023/05/26 00:14:27 by ooussaad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int meutix_initialize(t_root *data)
 		if(pthread_mutex_init(&data->forks[i++],NULL))
 			return(1);
 	}
+	ft_create_thread(data);
 	return (1);
 }
 

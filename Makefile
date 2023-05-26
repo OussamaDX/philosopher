@@ -1,10 +1,10 @@
 NAME = philo
 
-CFILES = philo.c check_number.c init_args.c
+CFILES = philo.c check_number.c init_args.c thread_init.c
 
 OBJ = ${CFILES:.c=.o}
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -fsanitize=address -g
 
 CC = cc
 

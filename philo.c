@@ -6,7 +6,7 @@
 /*   By: ooussaad <ooussaad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 13:45:02 by ooussaad          #+#    #+#             */
-/*   Updated: 2023/05/25 16:26:37 by ooussaad         ###   ########.fr       */
+/*   Updated: 2023/05/26 21:00:48 by ooussaad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ t_root *init_data(void)
 	ptr->time_to_eat = 0;
 	ptr->time_to_sleep = 0;
     ptr->num_of_eat = 0;
+	ptr->start = 0;
 	return (ptr);
 }
 
