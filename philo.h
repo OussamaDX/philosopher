@@ -6,7 +6,7 @@
 /*   By: ooussaad <ooussaad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 13:45:00 by ooussaad          #+#    #+#             */
-/*   Updated: 2023/05/27 02:45:33 by ooussaad         ###   ########.fr       */
+/*   Updated: 2023/05/28 15:53:06 by ooussaad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ typedef struct s_elm
 	int			front_fork;
 	int			side_fork;
 	pthread_t	philo_id;
+	int			last_ate;
 	t_root		*data;
 }t_elm;
 

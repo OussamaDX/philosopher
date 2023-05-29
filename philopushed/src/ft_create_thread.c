@@ -6,7 +6,7 @@
 /*   By: ooussaad <ooussaad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 11:23:41 by ajeftani          #+#    #+#             */
-/*   Updated: 2023/05/27 21:50:47 by ooussaad         ###   ########.fr       */
+/*   Updated: 2023/05/28 14:41:13 by ooussaad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,15 +61,16 @@ int	ft_create_thread(t_data *data)
 			return (1);
 		usleep(50);
 	}
-	todie(data);
+	while(1);
+	// todie(data);
 	// i = 0;
 	// if (data->count == 1)
 	// 	pthread_detach(data->philos[0].thread_id);
 	// else
-	// {
+	
 	// 	while (i < data->count)
-	// 		pthread_join(data->philos [i++].thread_id, NULL);
-	// }
+	// 	 	pthread_join(data->philos [i++].thread_id, NULL);
+	
 	// ft_free_destroy(data);
 	return (1);
 }

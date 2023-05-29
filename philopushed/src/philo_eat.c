@@ -6,7 +6,7 @@
 /*   By: ooussaad <ooussaad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 13:33:35 by ajeftani          #+#    #+#             */
-/*   Updated: 2023/05/27 20:45:47 by ooussaad         ###   ########.fr       */
+/*   Updated: 2023/05/28 15:55:40 by ooussaad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	philo_print(char *msg, t_philo *philo)
 	// pthread_mutex_unlock(&philo->data->max_eat_m);
 	// pthread_mutex_lock(&philo->data->extra);
 	// if (!max && !philo->data->stop_it)
-		printf(" %s %s %s\n", timeprint, philo->pos_str, msg);
+	printf(" %s %s %s\n", timeprint, philo->pos_str, msg);
 	// pthread_mutex_unlock(&philo->data->extra);
 	pthread_mutex_unlock(&philo->data->writing);
 	free(timeprint);

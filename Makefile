@@ -4,7 +4,7 @@ CFILES = philo.c check_number.c init_args.c thread_init.c ft_itoa.c
 
 OBJ = ${CFILES:.c=.o}
 
-CFLAGS = -Wall -Wextra -Werror -fsanitize=address -g3
+CFLAGS = -Wall -Wextra -Werror  #-fsanitize=address -g3
 
 CC = cc
 
