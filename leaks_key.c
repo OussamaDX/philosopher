@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_destroy.c                                  :+:      :+:    :+:   */
+/*   leaks_key.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ooussaad <ooussaad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/06 20:13:10 by ajeftani          #+#    #+#             */
-/*   Updated: 2023/06/01 17:37:29 by ooussaad         ###   ########.fr       */
+/*   Created: 2023/06/01 17:32:40 by ooussaad          #+#    #+#             */
+/*   Updated: 2023/06/01 17:37:13 by ooussaad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/philosophers.h"
+#include "philo.h"
 
 void	ft_free_destroy(t_data *data)
 {
