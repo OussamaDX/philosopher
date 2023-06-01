@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philo.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ooussaad <ooussaad@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ooussaad <ooussaad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 13:45:00 by ooussaad          #+#    #+#             */
-/*   Updated: 2023/06/01 00:52:51 by ooussaad         ###   ########.fr       */
+/*   Updated: 2023/06/01 18:17:13 by ooussaad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ char		*ft_itoa(int n);
 long		timeoftheday(void);
 void	count_food_max(t_root *data);
 void	philo_die(t_root *data);
+void	ft_free_philo(t_root *data);
 
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   thread_init.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ooussaad <ooussaad@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ooussaad <ooussaad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 16:33:57 by ooussaad          #+#    #+#             */
-/*   Updated: 2023/06/01 02:45:29 by ooussaad         ###   ########.fr       */
+/*   Updated: 2023/06/01 18:17:23 by ooussaad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,5 +110,6 @@ int ft_create_thread(t_root *data)
 		while (i < data->philo_num)
 		 	pthread_join(data->philospher [i++].philo_id, NULL); 
     }
+    ft_free_philo(data);
     return (1);
 }
