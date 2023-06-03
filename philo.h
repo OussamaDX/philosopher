@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philo.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ooussaad <ooussaad@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: ooussaad <ooussaad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 13:45:00 by ooussaad          #+#    #+#             */
-/*   Updated: 2023/06/01 18:17:13 by ooussaad         ###   ########.fr       */
+/*   Updated: 2023/06/02 23:17:14 by ooussaad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,8 @@ typedef struct s_data
 long long	ft_atoi(char *str);
 int         check_numbers(char **argv);
 void	message_phillo(char *msg, t_elm *philo);
-
+void	ft_usleep(long time);
+long	timeoftheday(void);
 int			ft_init(t_root *data, char **argv, int argc);
 int			init_args(t_root *data, char **argv, int argc);
 int			ft_create_thread(t_root *data);

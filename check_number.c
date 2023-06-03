@@ -6,7 +6,7 @@
 /*   By: ooussaad <ooussaad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 23:58:30 by ooussaad          #+#    #+#             */
-/*   Updated: 2023/05/24 00:28:28 by ooussaad         ###   ########.fr       */
+/*   Updated: 2023/06/02 23:23:56 by ooussaad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,14 @@ long long	ft_atoi(char *str)
 	while ((str[i] >= 9 && str[i] <= 13) || str[i] == ' ')
 		i++;
 	if (str[i] == '-')
-		(write(2, "Error SIGN\n", 12), exit(0));
+		return 0;
 	while (str[i] >= 48 && str[i] <= 57 && str[i] && result <= INT32_MAX)
 	{
 		result = result * 10 + (str[i] - '0');
 		i++;
 	}
 	if (str[i] != '\0')
-		(write(2, "Error\n", 6), exit(0));
+		return 0;
 	if (result > INT32_MAX)
 		return 0;
 	return (result);

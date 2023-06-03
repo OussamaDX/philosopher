@@ -6,7 +6,7 @@
 /*   By: ooussaad <ooussaad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 15:51:58 by ooussaad          #+#    #+#             */
-/*   Updated: 2023/06/01 16:14:40 by ooussaad         ###   ########.fr       */
+/*   Updated: 2023/06/02 23:19:00 by ooussaad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,7 @@ void	count_food_max(t_root *data)
 		}
 	}
 	pthread_mutex_lock(&data->max_eat);
-	if (j == data->philo_num)
-		data->max_food = j;
+	data->max_food  = (j == data->philo_num);
 	pthread_mutex_unlock(&data->max_eat);
 }
 

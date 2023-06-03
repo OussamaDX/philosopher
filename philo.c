@@ -6,7 +6,7 @@
 /*   By: ooussaad <ooussaad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 13:45:02 by ooussaad          #+#    #+#             */
-/*   Updated: 2023/05/27 14:29:49 by ooussaad         ###   ########.fr       */
+/*   Updated: 2023/06/02 23:21:11 by ooussaad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,16 @@
 int main(int argc,char **argv)
 {
 	t_root data;
+	data.num_of_eat = 0;
+	data.max_food = 0;
     if (argc == 5 || argc == 6)
     {
         check_numbers(argv);
 		if (!init_args(&data,argv,argc))
-			(write(2, "Error int \n",12), exit(0));
+			return (0);
 		if (ft_create_thread(&data))
 			return (0);
 	}
 	else
-		(write(2, "Error args \n",11), exit(0));
+		write(2, "Error args \n",11);
 }

@@ -3,55 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   thread_init.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ooussaad <ooussaad@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: ooussaad <ooussaad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 16:33:57 by ooussaad          #+#    #+#             */
-/*   Updated: 2023/06/01 18:17:23 by ooussaad         ###   ########.fr       */
+/*   Updated: 2023/06/02 23:16:49 by ooussaad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-long	timeoftheday(void)
-{
-	struct timeval	time;
-
-	gettimeofday(&time, NULL);
-	return ((time.tv_sec * 1000) + (time.tv_usec / 1000));
-}
-
-
-void	ft_usleep(long time)
-{
-	long	start;
-
-	start = timeoftheday();
-	while (timeoftheday() - start < time)
-		usleep(30);
-}
-
-void	message_phillo(char *msg, t_elm *philo)
-{
-    long time = timeoftheday() - philo->data->start;
-    int max;
-
-    pthread_mutex_lock(&philo->data->msgs);
-    pthread_mutex_lock(&philo->data->max_eat);
-	max = philo->data->max_food;
-	pthread_mutex_unlock(&philo->data->max_eat);
-	pthread_mutex_lock(&philo->data->dop);
-	if (!max && !philo->data->breaking)
-	    printf(" %ld %s %s \n", time, philo->philo_position_str, msg);
-	pthread_mutex_unlock(&philo->data->dop);
-    pthread_mutex_unlock(&philo->data->msgs);
-}
-
 void eating(t_elm *philo)
 {
 	pthread_mutex_lock(&philo->data->forks[philo->front_fork]);
-    message_phillo("has taken a front fork", philo);
+    message_phillo("has taken a fork", philo);
     pthread_mutex_lock(&philo->data->forks[philo->side_fork]);
-    message_phillo("has taken a side fork", philo);
+    message_phillo("has taken a fork", philo);
 	message_phillo("is eating \U0001f600", philo);
     pthread_mutex_lock(&philo->data->meal);
     philo->last_eat = timeoftheday();
@@ -110,6 +76,6 @@ int ft_create_thread(t_root *data)
 		while (i < data->philo_num)
 		 	pthread_join(data->philospher [i++].philo_id, NULL); 
     }
-    ft_free_philo(data);
+   ft_free_philo(data);
     return (1);
 }
