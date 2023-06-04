@@ -6,7 +6,7 @@
 /*   By: ooussaad <ooussaad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 23:16:30 by ooussaad          #+#    #+#             */
-/*   Updated: 2023/06/02 23:16:56 by ooussaad         ###   ########.fr       */
+/*   Updated: 2023/06/04 02:26:32 by ooussaad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,16 +31,17 @@ void	ft_usleep(long time)
 
 void	message_phillo(char *msg, t_elm *philo)
 {
-    long time = timeoftheday() - philo->data->start;
-    int max;
+	long	time;
+	int		max;
 
-    pthread_mutex_lock(&philo->data->msgs);
-    pthread_mutex_lock(&philo->data->max_eat);
+	time = timeoftheday() - philo->data->start;
+	pthread_mutex_lock(&philo->data->msgs);
+	pthread_mutex_lock(&philo->data->max_eat);
 	max = philo->data->max_food;
 	pthread_mutex_unlock(&philo->data->max_eat);
 	pthread_mutex_lock(&philo->data->dop);
 	if (!max && !philo->data->breaking)
-	    printf(" %ld %s %s \n", time, philo->philo_position_str, msg);
+		printf(" %ld %s %s \n", time, philo->philo_position_str, msg);
 	pthread_mutex_unlock(&philo->data->dop);
-    pthread_mutex_unlock(&philo->data->msgs);
+	pthread_mutex_unlock(&philo->data->msgs);
 }
